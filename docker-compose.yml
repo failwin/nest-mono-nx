@@ -6,7 +6,6 @@ networks:
 
 services:
   api:
-    container_name: api
     build:
       context: ./
       cache_from:
@@ -20,6 +19,49 @@ services:
       - 3000:3000
     environment:
       NODE_ENV: "development"
+      PORT: 3000
     networks:
       - corp
     restart: on-failure
+
+  authors:
+    depends_on:
+      - postgres
+    build:
+      context: ./
+      cache_from:
+        - nest-mono-nx:base
+      dockerfile: ./apps/authors/Dockerfile
+      args:
+        NODE_ENV: "development"
+        BUILD_FLAG: ""
+    # image: nest-mono-nx-authors:base
+    ports:
+      - 3001:3001
+    environment:
+      NODE_ENV: "development"
+      PORT: 3001
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5433
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: test-test
+    networks:
+      - corp
+    restart: on-failure
+
+  postgres:
+    image: postgres:14
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: test-test
+    ports:
+      - 5433:5432
+    volumes:
+      - db:/var/lib/postgresql/data
+
+volumes:
+  db:
+    driver: local
