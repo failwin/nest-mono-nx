@@ -19,6 +19,9 @@
     },
     "lint": {
       "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
+    },
+    "deploy": {
+      "dependsOn": []
     }
   },
   "namedInputs": {
@@ -32,5 +35,5 @@
     ],
     "sharedGlobals": []
   },
-  "defaultProject": "nest-nx"
+  "defaultProject": "api"
 }
