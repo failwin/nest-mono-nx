@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Directive, ObjectType, Field, ID } from '@nestjs/graphql';
 
 export interface BaseModelI {
   id: number;
@@ -11,14 +12,19 @@ export interface AuthorI extends BaseModelI {
   age: number;
 }
 
+@ObjectType()
+@Directive('@key(fields: "id")')
 @Entity()
 export class BaseModel implements BaseModelI {
+  @Field(() => ID)
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: 'timestamptz' })
+  @Field(() => Date)
+  @CreateDateColumn()
   createdAt: Date;
 
-  @Column({ type: 'timestamptz' })
+  @Field(() => Date)
+  @UpdateDateColumn()
   updatedAt: Date;
 }
