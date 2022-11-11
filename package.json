@@ -9,6 +9,9 @@
   },
   "private": true,
   "dependencies": {
+    "@apollo/federation": "^0.37.1",
+    "@apollo/gateway": "^2.1.4",
+    "@apollo/subgraph": "^2.1.4",
     "@nestjs/apollo": "^10.1.6",
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
