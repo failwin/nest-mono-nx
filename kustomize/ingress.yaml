@@ -17,3 +17,10 @@ spec:
             name: ttt
             port:
               name: http
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: ttt-2
+            port:
+              name: http

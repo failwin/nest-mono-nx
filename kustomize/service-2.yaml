@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ttt-2
+  labels:
+    app: ttt-2
+spec:
+  type: NodePort
+  ports:
+    - port: 3031
+      nodePort: 30031
+      protocol: TCP
+      name: http
+  selector:
+    app: ttt-2
