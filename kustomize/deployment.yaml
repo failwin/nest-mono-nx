@@ -1,0 +1,28 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: ttt
+  namespace: default
+  labels:
+    app: ttt
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ttt
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: ttt
+    spec:
+      containers:
+        - name: ttt
+          image: 'failwin/ttt:0.2.0'
+          ports:
+            - name: http
+              containerPort: 3030
+              protocol: TCP
+          env:
+            - name: SOME_TEXT
+              value: SOME_TEXT env2222
