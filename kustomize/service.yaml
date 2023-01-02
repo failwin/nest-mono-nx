@@ -7,7 +7,7 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 3030
+    - port: 3032
       nodePort: 30030
       protocol: TCP
       name: http
