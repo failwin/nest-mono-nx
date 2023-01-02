@@ -18,10 +18,10 @@ spec:
     spec:
       containers:
         - name: ttt-2
-          image: 'failwin/ttt:0.2.0'
+          image: 'failwin/ttt:0.3.0'
           ports:
             - name: http
-              containerPort: 3031
+              containerPort: 3030
               protocol: TCP
           env:
             - name: SOME_TEXT

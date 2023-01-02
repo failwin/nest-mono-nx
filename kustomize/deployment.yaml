@@ -21,10 +21,8 @@ spec:
           image: 'failwin/ttt:0.3.0'
           ports:
             - name: http
-              containerPort: 3032
+              containerPort: 3030
               protocol: TCP
           env:
             - name: SOME_TEXT
               value: SOME_TEXT main
-            - name: PORT
-              value: 3032
