@@ -1,0 +1,11 @@
+---
+controller:
+  kind: DaemonSet
+  daemonset:
+    useHostPort: true
+  dnsPolicy: ClusterFirstWithHostNet
+  hostNetwork: true
+  service:
+    type: ClusterIP
+rbac:
+  create: true
