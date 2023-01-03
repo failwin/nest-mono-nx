@@ -19,7 +19,13 @@ aws eks update-kubeconfig --name test
 kubectl create namespace nginx-ingress
 
 helm install test ingress-nginx/ingress-nginx \
--f nginx-ingress.yaml \
+-f ./kustomize/nginx-ingress.yaml \
 --namespace nginx-ingress
 
 kubectl get services
+
+SSL
+
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.8.2/cert-manager.yaml
+
+kubectl apply -f ./kustomize/issuer-lets-encrypt.yaml
