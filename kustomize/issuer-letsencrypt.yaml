@@ -1,14 +1,14 @@
 apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
-  name: letsencrypt-temp
+  name: letsencrypt-2
 spec:
   acme:
     server: https://acme-staging-v02.api.letsencrypt.org/directory
     email: failwin@ukr.net
     privateKeySecretRef:
-      name: letsencrypt-temp
+      name: letsencrypt-2
     solvers:
       - http01:
           ingress:
-            class: nginx
+            name: example

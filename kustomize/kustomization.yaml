@@ -7,4 +7,4 @@ resources:
   - service-2.yaml
   - secret-ssl.yaml
   - ingress.yaml
-  - issuer-lets-encrypt.yaml
+  - issuer-letsencrypt.yaml
