@@ -9,6 +9,10 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts:
+    - mm.my-works.in.ua
+    secretName: secret-ssl-2
   rules:
   - http:
       paths:

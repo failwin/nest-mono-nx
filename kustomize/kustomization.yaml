@@ -5,4 +5,6 @@ resources:
   - deployment-2.yaml
   - service.yaml
   - service-2.yaml
+  - secret-ssl.yaml
   - ingress.yaml
+  - issuer-letsencrypt.yaml
