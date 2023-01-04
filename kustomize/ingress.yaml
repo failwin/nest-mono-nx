@@ -6,7 +6,6 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     cert-manager.io/issuer: letsencrypt-2
-    kubernetes.io/ingress.class: "nginx"
 spec:
   ingressClassName: nginx
   tls:
