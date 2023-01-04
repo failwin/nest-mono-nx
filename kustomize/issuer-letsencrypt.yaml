@@ -1,13 +1,13 @@
 apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
-  name: letsencrypt-3
+  name: letsencrypt-4
 spec:
   acme:
     server: https://acme-staging-v02.api.letsencrypt.org/directory
     email: failwin@ukr.net
     privateKeySecretRef:
-      name: letsencrypt-3
+      name: letsencrypt-4
     solvers:
       - http01:
           ingress:
