@@ -5,13 +5,13 @@ metadata:
   namespace: default
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-    cert-manager.io/issuer: letsencrypt-2
+    cert-manager.io/issuer: letsencrypt-3
 spec:
   ingressClassName: nginx
   tls:
   - hosts:
     - mm.my-works.in.ua
-    secretName: secret-ssl-2
+    secretName: secret-ssl-3
   rules:
   - http:
       paths:
